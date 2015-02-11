@@ -1,0 +1,9 @@
+<h1>La Cuillère</h1>
+
+<ul>
+  <% @restaurants.each do |restaurant| %>
+  <li><%= link_to restaurant.name, restaurant_path(restaurant) %> - <%= restaurant.category %></li>
+  <% end %>
+</ul>
+
+<%= link_to "add restaurant", new_restaurant_path, class: "btn btn-success" %>

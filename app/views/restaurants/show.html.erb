@@ -1,0 +1,13 @@
+<% content_for(:title) do %>
+  <%= @restaurant.name.capitalize %> is on La Cuillere
+<% end %>
+
+<h1><%= @restaurant.name %></h1>
+
+<ul>
+  <li><%= @restaurant.address %></li>
+  <li><%= @restaurant.phone_number %></li>
+  <li><%= @restaurant.category %></li>
+</ul>
+
+<%= link_to "all restaurants", restaurants_path, class: "btn btn-primary" %>

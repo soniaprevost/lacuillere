@@ -1,0 +1,24 @@
+<%= bootstrap_form_for(@restaurant) do |f| %>
+  <% if @restaurant.errors.any? %>
+    <div id="error_explanation">
+      <ul>
+        <% @restaurant.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    Name : <%= f.text_field :name %><br />
+    Address : <%= f.text_field :address %><br />
+    Phone Number : <%= f.text_area :phone_number %><br />
+    Category    : <%= f.select(:category,
+                      "<option>chinese</option>
+                      <option>italian</option>
+                      <option>japanese</option>
+                      <option>french</option>
+                      <option>belgian</option>".html_safe)
+                       %> <br />
+    <%= f.submit %>
+<% end %>
+
